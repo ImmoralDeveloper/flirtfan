@@ -1,6 +1,6 @@
-<x-layouts.app title="Home">
+<x-layouts.app section="dashboard">
     <x-public.stories />
-    <div class="home__content">
+    <div class="home__container">
         <div>
             <x-public.editor />
             <x-public.posts />
