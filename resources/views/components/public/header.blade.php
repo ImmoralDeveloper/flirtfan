@@ -5,7 +5,7 @@
             <img src="{{ asset('img/logo-2.png') }}" alt="">
         </a>
         @if ($section !== 'login' && $section !== 'register')
-            <a id="page-title" href="#">{{ ucfirst($section) }}</a>
+            <h2 id="page-title">{{ ucfirst($section) }}</h2>
             <x-public.search-form />
             <div class="header__buttons">
                 <button id="message-btn">

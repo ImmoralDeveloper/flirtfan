@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MessagesController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,6 +28,12 @@ Route::middleware(['auth'])->group(function () {
         return view('home');
     })->name('home');
 
+    Route::controller(MessagesController::class)->group(function () {
+
+        Route::get('messages', 'show')->name('messages.show');
+
+    });
+    
     Route::controller(ProfileController::class)->group(function () {
 
         Route::get('{user:username}', 'index')->name('profile.index');
@@ -35,11 +41,6 @@ Route::middleware(['auth'])->group(function () {
 
     });
 
-    Route::controller(MessagesController::class)->group(function () {
-
-        Route::get('messages', 'show')->name('messages.show');
-
-    });
 });
 
 
