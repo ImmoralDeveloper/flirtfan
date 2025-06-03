@@ -1,0 +1,59 @@
+{
+  "_index-BtuGy7By.js": {
+    "file": "assets/index-BtuGy7By.js",
+    "name": "index"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-C_FkEWeE.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/auth.css": {
+    "file": "assets/auth-DbEAJ9zA.css",
+    "src": "resources/css/auth.css",
+    "isEntry": true
+  },
+  "resources/css/components/conversation.css": {
+    "file": "assets/conversation-Cf5rogqO.css",
+    "src": "resources/css/components/conversation.css",
+    "isEntry": true
+  },
+  "resources/css/components/media.css": {
+    "file": "assets/media-OQTbtZxF.css",
+    "src": "resources/css/components/media.css",
+    "isEntry": true
+  },
+  "resources/css/components/messages.css": {
+    "file": "assets/messages-CQJsqTNZ.css",
+    "src": "resources/css/components/messages.css",
+    "isEntry": true
+  },
+  "resources/css/messages.css": {
+    "file": "assets/messages-CoqPyHKW.css",
+    "src": "resources/css/messages.css",
+    "isEntry": true
+  },
+  "resources/css/profile.css": {
+    "file": "assets/profile-CpXVN2z2.css",
+    "src": "resources/css/profile.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-frUW4IfS.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_index-BtuGy7By.js"
+    ]
+  },
+  "resources/js/bootstrap.js": {
+    "file": "assets/bootstrap-frUW4IfS.js",
+    "name": "bootstrap",
+    "src": "resources/js/bootstrap.js",
+    "isEntry": true,
+    "imports": [
+      "_index-BtuGy7By.js"
+    ]
+  }
+}
