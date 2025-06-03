@@ -22,21 +22,13 @@
     gap: 30px;
 }
 
-.conversation__avatar {
-    width: 75px;
-    height: 75px;
-    overflow: hidden;
-    position: relative;
+.conversation__user .user-avatar img {
+    width: 80px;
+    height: 80px;
+    border-width: 3px !important;
 }
 
-.conversation__avatar img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.conversation__avatar span {
+.conversation__avatar .user-avatar span {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -85,13 +77,28 @@
 
 .conversation__message {
     width: 100%;
-    max-width: 500px;
-    padding: 15px 30px;
+    max-width: 420px;
+    padding: 20px 30px;
     background: var(--lightGray);
     border-radius: 25px;
     border-bottom-left-radius: 0;
 }
+.conversation__text{
+    margin-bottom: 5px;
+}
+.conversation__media{
+    margin-bottom: 5px;
 
+}
+.conversation__media img{
+    aspect-ratio: 1/.8;
+    object-fit: cover;
+}
+.conversation__time{
+    font-size: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
 .conversation__message.sent {
     margin-left: auto;
     background: var(--primaryColor);

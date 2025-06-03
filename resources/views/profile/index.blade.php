@@ -11,12 +11,13 @@ $sections = [
 
 <x-layouts.app section="profile">
     <div class="profile__container">
-
         <div class="profile__header">
             <div class="profile__info">
                 <div class="profile__avatar">
-                    <img src="{{ asset('img/profile-avatar.png') }}" alt="">
-                    <button></button>
+                    <x-user-avatar :user="$user" />
+                    @if (auth()->check() && $user->id === auth()->id())
+                        <button></button>
+                    @endif
                 </div>
                 <h1>{{ $user->name }}</h1>
                 <span>{{ '@' . $user->username }}</span>
@@ -27,26 +28,29 @@ $sections = [
             <div class="profile__meta">
                 <div class="profile__stats">
                     <div>
-                        <span>1.7k</span>
+                        <span>{{ $user->totalLikesReceived() }}</span>
                         <p>{{ __('Likes') }}</p>
                     </div>
                     <div>
-                        <span>366</span>
+                        <span>{{ $user->followers->count() }}</span>
                         <p>{{ __('Followers') }}</p>
                     </div>
                     <div>
-                        <span>57</span>
+                        <span>{{ $user->posts->count() }}</span>
                         <p>{{ __('Posts') }}</p>
                     </div>
                 </div>
                 <p>{{ $user->bio }}</p>
-                <ul>
-                    <li><i class="icon icon-web"></i> <a href="https://immoral.dev">https://immoral.dev</a></li>
-                    <li><i class="icon icon-email"></i> <a href="#">giovanni@immoral.dev</a></li>
-                    <li><i class="icon icon-facebook"></i> <a href="https://fb.com/immoral.dev">immoral.dev</a></li>
-                    <li><i class="icon icon-instagram"></i> <a href="https://instagram.com/immoral.dev">immoral.dev</a>
-                    </li>
-                </ul>
+                @if ($user->isPerformer())
+                    <ul>
+                        <li><i class="icon icon-web"></i> <a href="https://immoral.dev">https://immoral.dev</a></li>
+                        <li><i class="icon icon-email"></i> <a href="#">giovanni@immoral.dev</a></li>
+                        <li><i class="icon icon-facebook"></i> <a href="https://fb.com/immoral.dev">immoral.dev</a></li>
+                        <li><i class="icon icon-instagram"></i> <a
+                                href="https://instagram.com/immoral.dev">immoral.dev</a>
+                        </li>
+                    </ul>
+                @endif
             </div>
             <div class="profile__content">
                 <div class="profile__sections">
@@ -64,9 +68,12 @@ $sections = [
                         @break
 
                         @default
-                            <x-public.editor />
-                            <x-public.posts />
+                            @if (auth()->check() && $user->id === auth()->id())
+                                <x-public.editor />
+                            @endif
+                            <x-public.posts :posts="$user->posts" />
                         @break
+
                     @endswitch
                 </div>
             </div>

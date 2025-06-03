@@ -9,8 +9,8 @@
         </button>
     </form>
     <ul>
-        @foreach ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] as $item)
-            <x-public.messages.item :item="$item" />
+        @foreach (auth()->user()->latest_conversations as $conversation)
+            <x-public.messages.item :conversation="$conversation" />
         @endforeach
     </ul>
 </div>

@@ -38,10 +38,11 @@
     letter-spacing: .8px;
 }
 
-a{
+a {
     color: var(--white);
 }
-input{
+
+input {
     color: var(--white);
 }
 
@@ -52,9 +53,11 @@ input{
 .button--secondary {
     background: var(--lightGray);
 }
+
 .button--secondary:hover {
     background: var(--darkGray);
 }
+
 .icon {
     width: 25px;
     height: 25px;
@@ -117,6 +120,7 @@ body:has(.navbar) {
 .body--auth .header {
     background: transparent;
 }
+
 .header__container {
     display: flex;
     justify-content: space-between;
@@ -127,19 +131,24 @@ body:has(.navbar) {
     margin: 0 auto;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
+
 .body--auth .header__container {
     border-bottom: none;
     padding: 40px 0;
 }
+
 .header__logo {
     display: none;
 }
+
 .body--auth .header__logo {
     display: block;
 }
+
 .header__logo img {
     height: 33px;
 }
+
 .header__user {
     display: flex;
     align-items: center;
@@ -234,12 +243,23 @@ body:has(.navbar) {
     gap: 10px;
 }
 
-.header__user__avatar img {
+.user-avatar img {
     object-fit: cover;
     width: 50px;
     height: 50px;
     display: block;
     border-radius: 50%;
+    border: 2px solid var(--primaryColor);
+    box-shadow: 0 0 7px 0 #E91E63;
+}
+
+.user-avatar.has-story img {
+    border: 2px solid var(--light);
+    box-shadow: none;
+}
+
+.story--add .user-avatar img,
+.user-avatar.has-story.active img {
     border: 2px solid var(--primaryColor);
     box-shadow: 0 0 7px 0 #E91E63;
 }
@@ -326,13 +346,17 @@ body:has(.navbar) {
 
 .story {
     color: var(--white);
-    font-size: 12px;
     line-height: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+    order: 2;
     gap: 7px;
+}
+
+.story:has(.active) {
+    order: 1;
 }
 
 .story--add {
@@ -340,18 +364,17 @@ body:has(.navbar) {
     font-weight: 500;
 }
 
-.story[checked="1"] {
-    order: 2;
-}
-
 .story--add {
-    order: -1;
+    order: -1 !important;
 }
 
 .story__img {
+    position: relative;
+}
+
+.story img {
     width: 70px;
     height: 70px;
-    position: relative;
 }
 
 .story__img span {
@@ -381,20 +404,10 @@ body:has(.navbar) {
 .story__img span::before {
     transform: rotate(90deg);
 }
-
-.story__img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 50%;
-    border: 2px solid var(--primaryColor);
-    box-shadow: 0 0 7px 0 #E91E63;
-}
-
-.story[checked="1"] .story__img img {
-    border: 2px solid var(--light);
-    box-shadow: none;
+.story p{
+    font-size:11px;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 .stories__wrapper {
@@ -506,16 +519,6 @@ body:has(.navbar) {
     gap: 10px;
     margin-bottom: 20px;
     padding: 15px 25px 0;
-}
-
-.post__avatar img {
-    display: block;
-    border-radius: 50%;
-    border: 2px solid var(--primaryColor);
-    box-shadow: 0 0 7px 0 #E91E63;
-    object-fit: cover;
-    width: 50px;
-    height: 50px;
 }
 
 .post__user_info {
@@ -789,7 +792,7 @@ body:has(.navbar) {
     width: 100%;
 }
 
-.suggestion>div img {
+.suggestion .user-avatar img {
     width: 40px;
     height: 40px;
     object-fit: cover;
@@ -890,7 +893,7 @@ body:has(.navbar) {
         padding: 10px 0;
     }
 
-    .header__user__avatar img {
+    .user-avatar img {
         width: 40px;
         height: 40px;
     }
@@ -1080,61 +1083,78 @@ body:has(.navbar) {
         font-size: 16px;
         letter-spacing: .6px;
     }
+
     .editor .icon,
     .post .icon {
         width: 20px;
         height: 20px;
         mask-size: 500px 80px;
     }
+
     .icon.icon-media {
         mask-position: -280px 0;
     }
+
     .icon.icon-camera {
         mask-position: -20px 0;
     }
+
     .icon.icon-like {
         mask-position: -220px -20px;
     }
+
     .icon.icon-comment {
         mask-position: -120px 0;
     }
-    .editor{
+
+    .editor {
         padding: 15px 20px;
         height: 200px;
     }
+
     .editor__textarea {
         line-height: 1.44;
         font-size: 16px;
     }
-    .editor__actions button[type="button"], .editor__actions label {
+
+    .editor__actions button[type="button"],
+    .editor__actions label {
         font-size: 12x;
     }
-    .editor__actions{
+
+    .editor__actions {
         gap: 30px;
     }
-    .post__header{
+
+    .post__header {
         padding: 15px 20px 0;
     }
+
     .post__text {
         padding: 0 20px;
     }
+
     .post__footer {
         padding: 15px 20px;
         gap: 20px;
     }
-    .stories__wrapper{
+
+    .stories__wrapper {
         gap: 25px;
     }
+
     .story {
         font-size: 11px;
         line-height: 18px;
         gap: 5px;
     }
+
     .story__img {
         width: 60px;
         height: 60px;
     }
 }
+
 @media(max-width: 400px) {
     .header__container {
         gap: 20px;

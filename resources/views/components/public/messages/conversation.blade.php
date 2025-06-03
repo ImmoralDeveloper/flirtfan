@@ -4,13 +4,14 @@
 <div class="conversation">
     <div class="conversation__header">
         <div class="conversation__user">
-            <a href="#" class="conversation__avatar">
-                <img src="{{ asset('img/avatars/avatar-1.png') }}" alt="">
-                <span></span>
-            </a>
+            @php
+                $talkingTo =
+                    $conversation->userOne->id === auth()->id() ? $conversation->userTwo : $conversation->userOne;
+            @endphp
+            <x-user-avatar :user="$talkingTo" />
             <div class="conversation__info">
-                <h3><a href="#">Florencio Dorrance</a></h3>
-                <a href="#">@Florenciodorrance2362</a>
+                <h3><a href="{{ route('profile.index', $talkingTo->username) }}">{{ $talkingTo->name }}</a></h3>
+                <a href="{{ route('profile.index', $talkingTo->username) }}">{{ "@{$talkingTo->username}" }}</a>
                 <b>{{ __('Online') }}</b>
             </div>
         </div>
@@ -28,22 +29,19 @@
     </div>
     <div class="conversation__body">
         <ul class="conversation__messages">
-            @foreach ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20] as $message)
-                @if (!$message % 3 == 0)
-                    <li class="conversation__message{{ $message % 3 == 0 ? ' sent' : ' received' }}">
-                        <div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, quia.</p>
-                            <span>2:44 AM</span>
+            @foreach ($conversation->latest_messages as $message)
+                <li class="conversation__message{{ $message->sender->id === auth()->id() ? ' sent' : ' received' }}">
+                    @if ($message->body)
+                        <div class="conversation__text">
+                            <p>{{ $message->body }}</p>
                         </div>
-                        {{-- <div class="conversation__message-media"></div> --}}
-                    </li>
-                @endif
-                <li class="conversation__message{{ $message % 3 == 0 ? ' sent' : ' received' }}">
-                    <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, quia.</p>
-                        <span>2:44 AM</span>
-                    </div>
-                    {{-- <div class="conversation__message-media"></div> --}}
+                    @endif
+                    @if ($message->media)
+                        <div class="conversation__media" count="{{ count($message->media) }}">
+                            <img src="{{ asset('img/media-1.png') }}">
+                        </div>
+                    @endif
+                    <span class="conversation__time">{{ $message->created_at->isToday() ? $message->created_at->format('h:i A') : $message->created_at->format('M d, h:i A') }}</span>
                 </li>
             @endforeach
         </ul>

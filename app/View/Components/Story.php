@@ -13,7 +13,6 @@ class Story extends Component
      */
     public function __construct()
     {
-        //
     }
 
     /**
@@ -21,6 +20,6 @@ class Story extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.story');
+        return view('components.public.story');
     }
 }

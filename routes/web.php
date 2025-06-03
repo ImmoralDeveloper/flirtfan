@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MessagesController;
 use Illuminate\Support\Facades\Route;
@@ -24,16 +25,15 @@ Route::middleware(['guest'])->group(function () {
 
 });
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', function () {
-        return view('home');
-    })->name('home');
+    
+    Route::get('/', HomeController::class)->name('home');
 
     Route::controller(MessagesController::class)->group(function () {
 
         Route::get('messages', 'show')->name('messages.show');
 
     });
-    
+
     Route::controller(ProfileController::class)->group(function () {
 
         Route::get('{user:username}', 'index')->name('profile.index');

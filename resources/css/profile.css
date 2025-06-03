@@ -54,8 +54,13 @@ body:has(.profile__container) .main {
     justify-content: center;
     align-items: center;
     margin-bottom: 25px;
+}
+.profile__avatar .user-avatar img{
     width: 195px;
     height: 195px;
+}
+.profile__avatar .user-avatar img{
+    border-width: 6px! important;
 }
 
 .profile__avatar button {

@@ -1,12 +1,12 @@
 <x-layouts.app section="dashboard">
-    <x-public.stories />
+    <x-stories />
     <div class="home__container">
         <div>
             <x-public.editor />
-            <x-public.posts />
+            <x-public.posts :posts="$posts" />
         </div>
         <aside>
-            <x-public.suggestions />
+            <x-suggestions />
         </aside>
     </div>
 </x-layouts.app>

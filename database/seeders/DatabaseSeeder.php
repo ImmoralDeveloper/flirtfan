@@ -21,6 +21,11 @@ class DatabaseSeeder extends Seeder
             'username' => 'test_user',
             'email' => 'test@example.com',
         ]);
+        User::factory()->performer()->create([
+            'name' => 'Test Performer',
+            'username' => 'test_performer',
+            'email' => 'performer@example.com',
+        ]);
         User::factory()->admin()->create([
             'name' => 'Test Admin',
             'username' => 'test_admin',
@@ -30,6 +35,15 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test Moderator',
             'username' => 'test_moderator',
             'email' => 'moderator@example.com',
+        ]);
+
+        $this->call([
+            PostSeeder::class,
+            FollowingUsersSeeder::class,
+            PostLikeSeeder::class,
+            PostCommentSeeder::class,
+            ConversationSeeder::class,
+            StorySeeder::class,
         ]);
 
     }

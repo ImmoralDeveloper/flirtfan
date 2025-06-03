@@ -8,19 +8,18 @@
             <h2 id="page-title">{{ ucfirst($section) }}</h2>
             <x-public.search-form />
             <div class="header__buttons">
-                <button id="message-btn">
-                    <i class="icon icon-message"></i>
+                <button>
+                    <a href="{{ route('messages.show') }}" id="message-btn">
+                        <i class="icon icon-message"></i>
+                    </a>
                 </button>
                 <button id="notification-btn">
                     <i class="icon icon-notification"></i>
                 </button>
             </div>
             <div class="header__user">
-                <a href="#" class="header__user__avatar">
-                    <img src="{{ asset('img/avatar.png') }}" alt="Avatar">
-                </a>
-                <a href="{{ route('profile.index', auth()->user()) }}" 
-                class="header__username">
+                <x-user-avatar :user="auth()->user()" />
+                <a href="{{ route('profile.index', auth()->user()) }}" class="header__username">
                     <span>{{ auth()->user()->name }}</span>
                 </a>
                 <i class="icon icon-down-angle-bracket"></i>
