@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){const e=document.querySelector(".messages-list");e&&e.addEventListener("click",function(s){var n;let t=s.target.closest("[data-action]");if(t)switch(t.dataset.action){case"openMessage":(n=document.querySelector(".conversation"))==null||n.classList.add("active");break}})});

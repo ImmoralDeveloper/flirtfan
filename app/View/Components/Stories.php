@@ -19,11 +19,11 @@ class Stories extends Component
         $viewer->load('viewedStories'); // Optimiza para evitar consultas por historia
 
         $this->performersWithStories = User::whereHas('stories', function ($q) {
-            $q->where('created_at', '>=', now()->subHours(24));
+            $q->where('created_at', '>=', now()->subHours(21114));
         })
             ->with([
                 'stories' => function ($q) {
-                    $q->where('created_at', '>=', now()->subHours(24))
+                    $q->where('created_at', '>=', now()->subHours(21114))
                         ->orderBy('created_at', 'desc');
                 }
             ])

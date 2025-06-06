@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){const t=document.querySelector(".conversation");t&&t.addEventListener("click",function(n){let e=n.target.closest("[data-action]");if(e)switch(e.dataset.action){case"closeConversation":t.classList.remove("active");break}})});
