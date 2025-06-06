@@ -1,7 +1,10 @@
 @push('styles')
     @vite('resources/css/components/conversation.css')
 @endpush
-<div class="conversation">
+@push('scripts')
+    @vite('resources/js/conversation.js')
+@endpush
+<div class="conversation active">
     <div class="conversation__header">
         <div class="conversation__user">
             @php
@@ -15,15 +18,12 @@
                 <b>{{ __('Online') }}</b>
             </div>
         </div>
-        <div>
-            <button>
-                <i class="icon icon-tel"></i>
-            </button>
-            <button>
+        <div class="conversation__actions">
+            <button class="conversation__more" data-action="moreOptions">
                 <i class="icon icon-more"></i>
             </button>
-            <button>
-                <i class="icon icon-webcam"></i>
+            <button class="conversation__close" data-action="closeConversation">
+                <i class="icon icon-times"></i>
             </button>
         </div>
     </div>
@@ -48,7 +48,7 @@
     </div>
     <div class="conversation__footer">
         <div contenteditable="true" class="conversation__input" style='--placeHolder: "{{ __('Type a message...') }}"'></div>
-        <div class="conversation__send-buttons">
+        <div class="conversation__actions">
             <button>
                 <i class="icon icon-image"></i>
             </button>

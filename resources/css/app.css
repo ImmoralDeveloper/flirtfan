@@ -21,6 +21,29 @@
     font-family: var(--primaryFont);
     text-decoration: none;
     list-style: none;
+    scrollbar-width: 2px;
+    scrollbar-color: var(--primaryColor) transparent;
+    -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--primaryColor);
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Mozilla */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primaryColor) transparent;
 }
 
 .button {
@@ -94,10 +117,22 @@ input {
 .icon.icon-settings {
     mask-position: -225px -25px;
 }
+.icon.icon-more {
+    mask-position: -175px -75px;
+}
+.icon.icon-times {
+    mask-position: -350px -75px;
+}
+.icon.icon-image {
+    mask-position: -350px 0;
+}
+.icon.icon-send {
+    mask-position: -225px 0;
+}
 
 img {
     width: 100%;
-    /* opacity: .1; */
+    pointer-events: none;
 }
 
 body {
@@ -342,6 +377,7 @@ body:has(.navbar) {
 .stories {
     width: 100%;
     overflow: hidden;
+    user-select: none;
 }
 
 .story {
@@ -372,7 +408,7 @@ body:has(.navbar) {
     position: relative;
 }
 
-.story img {
+.story .user-avatar img {
     width: 70px;
     height: 70px;
 }
@@ -404,8 +440,9 @@ body:has(.navbar) {
 .story__img span::before {
     transform: rotate(90deg);
 }
-.story p{
-    font-size:11px;
+
+.story p {
+    font-size: 11px;
     font-weight: 500;
     white-space: nowrap;
 }
@@ -595,6 +632,7 @@ body:has(.navbar) {
 .post__media-container {
     width: 100%;
     overflow: hidden;
+    user-select: none;
     position: relative;
 }
 
@@ -606,15 +644,17 @@ body:has(.navbar) {
 .post__media {
     width: 100%;
     aspect-ratio: 16/9;
+    transition: .3s ease;
 }
 
 .post__media img {
     display: block;
     height: 100%;
     object-fit: cover;
+    pointer-events: none;
 }
 
-.post__media-btn {
+.slider-btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -629,7 +669,11 @@ body:has(.navbar) {
     cursor: pointer;
 }
 
-.post__media-btn .icon {
+.slider-btn * {
+    pointer-events: none;
+}
+
+.slider-btn .icon {
     width: 20px;
     height: 20px;
     mask-size: 500px 80px;
@@ -645,11 +689,11 @@ body:has(.navbar) {
     margin-right: -3px;
 }
 
-.post__media-btn[data-dir="prev"] {
+.slider-btn[data-dir="prev"] {
     left: 12.5px;
 }
 
-.post__media-btn[data-dir="next"] {
+.slider-btn[data-dir="next"] {
     right: 12.5px;
 }
 
@@ -850,43 +894,12 @@ body:has(.navbar) {
     }
 }
 
-@media (max-width: 900px) {
-
-    .header .icon,
-    .navbar .icon {
-        width: 20px;
-        height: 20px;
-        mask-size: 500px 80px;
-    }
+@media (max-width: 1150px) {
 
     .header {
         padding: 0 20px;
     }
 
-
-    #page-title {
-        display: none;
-    }
-
-    .search-form {
-        max-width: 300px;
-    }
-
-    .header__buttons {
-        margin-left: auto;
-    }
-
-    .header__buttons button .icon-message {
-        mask-position: -140px 0;
-    }
-
-    .header__buttons button .icon-notification {
-        mask-position: -80px 0;
-    }
-
-    .search-form button .icon-search {
-        mask-position: -340px 0;
-    }
 
     .header__container {
         gap: 25px;
@@ -906,10 +919,49 @@ body:has(.navbar) {
     .main {
         padding: 0 20px;
     }
+}
+
+@media (max-width: 900px) {
+
+    .header .icon,
+    .navbar .icon {
+        width: 20px;
+        height: 20px;
+        mask-size: 500px 80px;
+    }
+
+    .search-form {
+        max-width: 300px;
+    }
+
+    .header__buttons button .icon-message {
+        mask-position: -140px 0;
+    }
+
+    .header__buttons button .icon-notification {
+        mask-position: -80px 0;
+    }
+
+    .search-form button .icon-search {
+        mask-position: -340px 0;
+    }
+
+    #page-title {
+        display: none;
+    }
+
+    .header__buttons {
+        margin-left: auto;
+    }
+
 
 }
 
 @media (max-width: 900px) and (min-width: 769px) {
+    body:has(.navbar) {
+        padding-left: 78px;
+    }
+
     .navbar {
         width: 78px;
     }
@@ -1149,7 +1201,7 @@ body:has(.navbar) {
         gap: 5px;
     }
 
-    .story__img {
+    .story .user-avatar img {
         width: 60px;
         height: 60px;
     }

@@ -96,3 +96,10 @@
     line-height: 1.5;
     opacity: .6;
 }
+
+
+@media (max-width: 1150px) {
+    .messages-list{
+        max-width: 300px;
+    }
+}

@@ -1,4 +1,4 @@
-<li class="message-item">
+<li class="message-item" data-action="openMessage">
     <x-user-avatar :user="$conversation->userOne->id === auth()->id() ? $conversation->userTwo : $conversation->userOne" />
     <div class="message-item__content">
         <p>{{ $conversation->userOne->id === auth()->id() ? $conversation->userTwo->name : $conversation->userOne->name }}

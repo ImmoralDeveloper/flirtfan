@@ -1,6 +1,9 @@
-<div class="stories">
-    <div class="stories__wrapper" style="grid-template-columns: repeat({{ $performersWithStories->count() + 1 }}, 70px);">
-        <div class="story story--add">
+@push('scripts')
+    @vite('resources/js/stories.js')
+@endpush
+<div class="stories slider-container">
+    <div class="stories__wrapper slider-wrapper" style="grid-template-columns: repeat({{ $performersWithStories->count() + 1 }}, 70px);" data-current-index=0 data-slides-count="{{ $performersWithStories->count() + 1 }}">
+        <div class="story story--add slide">
             <div class="story__img">
                 <x-user-avatar :user="auth()->user()" />
                 <span></span>
@@ -8,13 +11,7 @@
             <p>{{ __('Add story') }}</p>
         </div>
         @foreach ($performersWithStories as $performer)
-            {{-- ME QUEDE AQUI, ESTO MUESTRA LAS PERFORMER QUE TIENEN HISTORIA O HISTORIAS Y DEBERIA PENSAR COMO IMPRIMIR SUS HISTORIAS, CREO QUE USARÉ EL COMPONENTE DEL USER AVATAR PARA VER SI TIENEN HISTORIAS Y LUEGO USAR UN MODAL COMO INSTAGRAM PARA MOSTRARLAS. --}}
-            {{-- TAMBIEN DEBERIA CAMBIAR EL COMPONENTE DE STORIES, DEBERIA PONERLE STORIES-BY-PERFORMER --}}
-            {{-- <x-story :checked="rand(0, 1)" /> --}}
-            {{-- <div>
-                <img src="{{asset('img/avatars/avatar-1.png')}}" alt="">
-            </div> --}}
-            <div class="story">
+            <div class="story slide">
                 <x-user-avatar :user="$performer" />
                 <p>{{str($performer->name)->limit(10)}}</p>
             </div>

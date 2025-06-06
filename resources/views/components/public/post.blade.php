@@ -17,19 +17,19 @@
             <p>{{ $post->body }}</p>
         </div>
         @if (count($post->media) > 0)
-            <div class="post__media-container">
-                <div class="post__media-wrapper"
+            <div class="post__media-container{{count($post->media) > 1 ? " slider-container" : ""}}" data-current-index=0 data-slides-count="{{ count($post->media) }}">
+                <div class="post__media-wrapper{{count($post->media) > 1 ? " slider-wrapper" : ""}}"
                     style="grid-template-columns: repeat({{ count($post->media) }}, 100%);">
                     @foreach ($post->media as $media)
-                        <div class="post__media">
+                        <div class="post__media{{count($post->media) > 1 ? " slide" : ""}}">
                             <img loading="lazy" src="{{ asset("img/posts/{$media['image']}") }}" />
                         </div>
                     @endforeach
                 </div>
                 @if (count($post->media) > 1)
-                    <button class="post__media-btn disabled" data-dir="prev"><i
+                    <button class="slider-btn disabled" data-dir="prev" data-action="swipeSlider"><i
                             class="icon icon-left-angle-bracket"></i></button>
-                    <button class="post__media-btn" data-dir="next"><i
+                    <button class="slider-btn" data-dir="next" data-action="swipeSlider"><i
                             class="icon icon-right-angle-bracket"></i></button>
                 @endif
             </div>

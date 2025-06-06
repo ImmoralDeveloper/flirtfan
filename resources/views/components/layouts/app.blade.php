@@ -15,7 +15,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         .icon {
-            mask-image: url("{{ asset('img/icons.svg') }}");
+            mask-image: url("{{ asset('img/icons.png') }}");
         }
     </style>
 </head>
