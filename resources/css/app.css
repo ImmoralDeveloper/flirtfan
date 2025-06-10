@@ -145,7 +145,6 @@ input {
 img {
     width: 100%;
     pointer-events: none;
-    opacity: .1;
 }
 
 body {
