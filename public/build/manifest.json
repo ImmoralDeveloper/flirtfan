@@ -3,22 +3,18 @@
     "file": "assets/index-BtuGy7By.js",
     "name": "index"
   },
-  "_slider-Dn3s94zC.js": {
-    "file": "assets/slider-Dn3s94zC.js",
-    "name": "slider"
-  },
   "resources/css/app.css": {
-    "file": "assets/app-DOcaqGgv.css",
+    "file": "assets/app-VsPPSMSC.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/css/auth.css": {
-    "file": "assets/auth-DbEAJ9zA.css",
+    "file": "assets/auth-BUFCfQzO.css",
     "src": "resources/css/auth.css",
     "isEntry": true
   },
   "resources/css/components/conversation.css": {
-    "file": "assets/conversation-DLYYz6u_.css",
+    "file": "assets/conversation-CzlCbG32.css",
     "src": "resources/css/components/conversation.css",
     "isEntry": true
   },
@@ -33,13 +29,25 @@
     "isEntry": true
   },
   "resources/css/messages.css": {
-    "file": "assets/messages-D048oCKJ.css",
+    "file": "assets/messages-CrBmxeiA.css",
     "src": "resources/css/messages.css",
     "isEntry": true
   },
   "resources/css/profile.css": {
     "file": "assets/profile-DYqRU7c7.css",
     "src": "resources/css/profile.css",
+    "isEntry": true
+  },
+  "resources/js/Carousel.js": {
+    "file": "assets/Carousel-l0sNRNKZ.js",
+    "name": "Carousel",
+    "src": "resources/js/Carousel.js",
+    "isEntry": true
+  },
+  "resources/js/Slider.js": {
+    "file": "assets/Slider-l0sNRNKZ.js",
+    "name": "Slider",
+    "src": "resources/js/Slider.js",
     "isEntry": true
   },
   "resources/js/app.js": {
@@ -73,27 +81,15 @@
     "isEntry": true
   },
   "resources/js/posts.js": {
-    "file": "assets/posts-G7Jr4FJE.js",
+    "file": "assets/posts-Dv_X46GM.js",
     "name": "posts",
     "src": "resources/js/posts.js",
-    "isEntry": true,
-    "imports": [
-      "_slider-Dn3s94zC.js"
-    ]
-  },
-  "resources/js/slider.js": {
-    "file": "assets/slider-l0sNRNKZ.js",
-    "name": "slider",
-    "src": "resources/js/slider.js",
     "isEntry": true
   },
   "resources/js/stories.js": {
-    "file": "assets/stories-D3wuZFPy.js",
+    "file": "assets/stories-uOFa0rxx.js",
     "name": "stories",
     "src": "resources/js/stories.js",
-    "isEntry": true,
-    "imports": [
-      "_slider-Dn3s94zC.js"
-    ]
+    "isEntry": true
   }
 }

@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 30px;
+    gap: 50px;
 }
 
 .auth-container img {
@@ -56,7 +56,7 @@
     align-items: center;
     width: 100%;
     background: var(--dark);
-    padding: 30px 40px 100px;
+    padding: 30px 40px 45px;
     border-radius: 20px;
 }
 
@@ -83,10 +83,11 @@
     margin-bottom: 20px;
     display: flex;
     gap: 20px;
+    width: 100%;
 }
 
 .auth-container form>div input {
-    margin-bottom: 0!important;
+    margin-bottom: 0 !important;
 }
 
 .auth-container form input {
@@ -145,4 +146,33 @@
 
 .auth-container form a:hover {
     color: var(--primaryColorDark);
+}
+
+@media(max-width: 1050px) {
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .auth-container>div{
+        max-width: 600px;
+    }
+    .auth-container>div:first-of-type {
+        display: none;
+    }
+}
+@media(max-width: 600px) {
+    .auth-container>div{
+        max-width: 600px;
+    }
+    .auth-container form{
+        padding: 30px 25px 45px;
+    }
+}
+@media(max-width: 450px) {
+    .auth-container form{
+        padding: 30px 20px 45px;
+    }
+    .auth-container form input{
+        padding: 10px 15px;
+    }
 }

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
+use Carbon\Carbon;
 class Post extends Model
 {
     use HasFactory;
@@ -24,6 +24,10 @@ class Post extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public function getShortCreatedAtAttribute()
+    {
+        return Carbon::parse($this->created_at)->diffForHumans(null, true, false, 1);
     }
     public function paymentRequired()
     {

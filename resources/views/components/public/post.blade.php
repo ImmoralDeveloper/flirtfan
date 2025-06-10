@@ -7,7 +7,7 @@
                 <a href="{{ route('profile.index', $post->user->username) }}">{{ "@{$post->user->username}" }}</a>
             </div>
             <div class="post__meta">
-                <a href="#{{ $post->id }}"><time>{{ $post->created_at->isToday() ? $post->created_at->format('h:i A') : $post->created_at->format('M d, h:i A') }}</time></a>
+                <a href="#{{ $post->id }}"><time>{{ $post->short_created_at }}</time></a>
                 <button type="button" class="post__more">
                     <i class="icon icon-more"></i>
                 </button>
@@ -17,11 +17,12 @@
             <p>{{ $post->body }}</p>
         </div>
         @if (count($post->media) > 0)
-            <div class="post__media-container{{count($post->media) > 1 ? " slider-container" : ""}}" data-current-index=0 data-slides-count="{{ count($post->media) }}">
-                <div class="post__media-wrapper{{count($post->media) > 1 ? " slider-wrapper" : ""}}"
+            <div class="post__media-container{{ count($post->media) > 1 ? ' slider-container' : '' }}"
+                data-current-index=0 data-slides-count="{{ count($post->media) }}">
+                <div class="post__media-wrapper{{ count($post->media) > 1 ? ' slider-wrapper' : '' }}"
                     style="grid-template-columns: repeat({{ count($post->media) }}, 100%);">
                     @foreach ($post->media as $media)
-                        <div class="post__media{{count($post->media) > 1 ? " slide" : ""}}">
+                        <div class="post__media{{ count($post->media) > 1 ? ' slide' : '' }}">
                             <img loading="lazy" src="{{ asset("img/posts/{$media['image']}") }}" />
                         </div>
                     @endforeach
