@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Message extends Model
 {
@@ -28,5 +29,11 @@ class Message extends Model
     public function sender()
     {
         return $this->belongsTo(User::class, 'sender_id');
+    }
+
+    
+    public function getShortCreatedAtAttribute()
+    {
+        return Carbon::parse($this->created_at)->diffForHumans(null, true, false, 1);
     }
 }

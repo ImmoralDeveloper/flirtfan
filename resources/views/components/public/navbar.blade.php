@@ -3,7 +3,7 @@
         <img src="{{ asset('img/logo.png') }}" alt="">
     </a>
     <ul>
-        <li class="navbar__btn" data-btn="home">
+        <li class="navbar__btn{{ request()->routeIs('home') ? ' active' : '' }}" data-btn="home">
             <a href="#">
                 <span>{{ __('Home') }}</span>
                 <i class="icon icon-home"></i>

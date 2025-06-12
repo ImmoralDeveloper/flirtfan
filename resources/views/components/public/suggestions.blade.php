@@ -14,9 +14,10 @@
                 <div>
                     <x-user-avatar :user="$suggestion->user" />
                     <div>
-                        <a href="{{ route('profile.index', $suggestion->user->username) }}">{{ $suggestion->user->name }}</a>
                         <a
-                            href="{{ route('profile.index', $suggestion->user->username) }}">{{ "@{$suggestion->user->username}" }}</a>
+                            href="{{ route('profile.index', $suggestion->user->username) }}">{{ Illuminate\Support\Str::limit($suggestion->user->name, 18) }}</a>
+                        <a
+                            href="{{ route('profile.index', $suggestion->user->username) }}">{{ '@' . Illuminate\Support\Str::limit($suggestion->user->username, 15) }}</a>
                     </div>
                     <button class="button">{{ __('Follow') }}</button>
                 </div>

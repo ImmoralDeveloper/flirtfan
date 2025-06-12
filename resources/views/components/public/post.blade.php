@@ -14,7 +14,7 @@
             </div>
         </header>
         <div class="post__text">
-            <p>{{ $post->body }}</p>
+            <p>{!! Illuminate\Support\Str::limit($post->body, 200, '<a href="#"><b>... ' . __('See more') . '</b></a>') !!}</p>
         </div>
         @if (count($post->media) > 0)
             <div class="post__media-container{{ count($post->media) > 1 ? ' slider-container' : '' }}"

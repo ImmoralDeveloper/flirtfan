@@ -11,7 +11,7 @@ body:has(.profile__container) .main {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 35px 30px;
+    padding: 35px 40px;
     height: 40vh;
     max-height: 360px;
 }
@@ -117,6 +117,8 @@ body:has(.profile__container) .main {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
 }
 
 .profile__body>div {
@@ -128,7 +130,7 @@ body:has(.profile__container) .main {
     top: 80px;
     background: var(--darkGray);
     max-width: 360px;
-    padding: 30px;
+    padding: 20px;
 }
 
 .profile__stats {
@@ -161,14 +163,10 @@ body:has(.profile__container) .main {
     opacity: .3;
 }
 
-.profile__content {
-    padding: 30px 50px;
-}
-
 .profile__meta>p {
     font-size: 13px;
     line-height: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     letter-spacing: .5px;
 }
 
@@ -194,8 +192,8 @@ body:has(.profile__container) .main {
 .profile__sections {
     display: flex;
     justify-content: center;
-    gap: 50px;
-    margin-bottom: 50px;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
 .profile__sections a {
@@ -229,11 +227,6 @@ body:has(.profile__container) .main {
     background: var(--primaryColor);
 }
 
-@media(max-width: 1050px) {
-    .profile__content {
-        padding: 30px;
-    }
-}
 
 @media(max-width: 1000px) {
     .profile__meta {
@@ -291,14 +284,13 @@ body:has(.profile__container) .main {
         align-items: center;
         padding: 0 calc(30px + 8vw);
     }
-    .profile__content{
-        padding: 0;
-    }
 }
 
 @media(max-width: 768px) {
     .profile__body{
-        padding: 0 20px;
+        padding: 0;
+        max-width: 600px;
+        margin: 0 auto;
     }
     .profile__header::after{
         height: 150px;
@@ -331,9 +323,6 @@ body:has(.profile__container) .main {
     .profile__avatar .user-avatar img{
         width: 140px;
         height: 140px;
-    }
-    .profile__body{
-        padding: 0 20px;
     }
     .profile__stats{
         padding: 15px 20px;

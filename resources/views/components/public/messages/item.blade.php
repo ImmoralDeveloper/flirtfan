@@ -3,7 +3,7 @@
     <div class="message-item__content">
         <p>{{ $conversation->userOne->id === auth()->id() ? $conversation->userTwo->name : $conversation->userOne->name }}
             <span>
-                {{ $conversation->last_message->created_at->isToday() ? $conversation->last_message->created_at->format('h:i A') : $conversation->last_message->created_at->format('M d, h:i A') }}
+                {{ $conversation->last_message->short_created_at }}
             </span>
         </p>
         <p>

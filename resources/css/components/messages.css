@@ -4,7 +4,6 @@
     flex-direction: column;
     background: var(--darkGray);
     border-radius: 5px;
-    padding-bottom: 20px;
 }
 
 .messages-list form {
@@ -43,6 +42,7 @@
 .messages-list ul {
     height: 100%;
     overflow: auto;
+    padding-bottom: 20px;
 }
 
 .message-item {
@@ -82,12 +82,14 @@
     font-weight: 600;
     line-height: 1.5;
     margin-bottom: 5px;
+    gap: 10px;
 }
 
 .message-item__content>p:first-of-type span {
     font-size: 10px;
     font-weight: 400;
     opacity: .4;
+    white-space: nowrap;
 }
 
 .message-item__content>p:last-of-type {
