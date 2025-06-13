@@ -9,9 +9,7 @@
             <x-public.search-form />
             <div class="header__buttons">
                 <button>
-                    <a href="{{ route('messages.show') }}" id="message-btn">
-                        <i class="icon icon-message"></i>
-                    </a>
+                    <i class="icon icon-message"></i>
                 </button>
                 <button id="notification-btn">
                     <i class="icon icon-notification"></i>
@@ -22,7 +20,6 @@
                 <a href="{{ route('profile.index', auth()->user()) }}" class="header__username">
                     <span>{{ auth()->user()->name }}</span>
                 </a>
-                <i class="icon icon-down-angle-bracket"></i>
             </div>
             <div id="hamburger">
                 <span></span>

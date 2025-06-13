@@ -8,19 +8,21 @@
 
 .messages-list form {
     position: relative;
-    padding: 20px;
+    padding: 15px 40px 15px 20px;
+    border-radius: 25px;
     display: flex;
+    background-color: var(--gray);
     align-items: center;
+    width: calc(100% - 40px);
+    margin: 20px auto;
 }
 
 .messages-list form input {
-    width: 100%;
-    padding: 15px 60px 15px 20px;
-    border-radius: 25px;
     display: block;
-    background-color: var(--gray);
     outline: none;
     border: none;
+    background: none;
+    width: 100%;
     color: var(--white);
 }
 
@@ -28,14 +30,25 @@
     position: absolute;
     display: flex;
     align-items: center;
-    right: 40px;
+    right: 0;
     background-color: transparent;
     border: none;
     color: var(--white);
     font-size: 1.2rem;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    transition: .2s;
+    opacity: .5;
 }
-
-.messages-list form input:focus {
+.messages-list form button:hover{
+    opacity: 1;
+    background: rgba(255,255,255, .1);
+}
+.messages-list form button .icon{
+    --iconSizePercent: .8;
+}
+.messages-list form:has(input:focus) {
     outline: 1px solid rgba(255, 255, 255, 0.04);
 }
 

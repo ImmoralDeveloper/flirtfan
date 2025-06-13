@@ -12,7 +12,7 @@
     justify-content: space-between;
     width: calc(100% - 40px);
     margin: 0 auto;
-    padding: 30px 10px;
+    padding: 20px 0;
     gap: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -20,7 +20,7 @@
 .conversation__user {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 5px;
 }
 
 .conversation__user .user-avatar img {
@@ -66,22 +66,29 @@
 .conversation__actions {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 .conversation__actions button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    padding: 10px;
     border-radius: 50%;
     background: transparent;
     border: none;
     cursor: pointer;
-    transition: .1s;
+    transition: .2s;
     color: var(--white);
     position: relative;
+    opacity: .75;
+}
+.conversation__actions button:hover{
+    background: rgba(255,255,255,.1);
+}
+.conversation__actions button .icon{
+    opacity: 1;
+    --iconSizePercent: .85
 }
 
 .conversation__actions button.conversation__close {
@@ -89,7 +96,7 @@
 }
 
 .conversation__body {
-    padding: 30px;
+    padding: 20px;
     height: 100%;
     overflow: auto;
 }
@@ -104,7 +111,7 @@
 .conversation__message {
     width: 100%;
     max-width: 420px;
-    padding: 20px 30px;
+    padding: 20px;
     background: var(--lightGray);
     border-radius: 25px;
 }
@@ -161,7 +168,7 @@
 }
 
 .conversation__input {
-    padding: 25px 30px;
+    padding: 20px;
     border: 1px solid transparent;
     transition: .1s;
     position: relative;
@@ -171,7 +178,7 @@
 
 .conversation__input:empty::before {
     position: absolute;
-    padding: 25px 30px;
+    padding: 20px;
     top: 0;
     left: 0;
     content: var(--placeHolder);
@@ -199,12 +206,9 @@
         width: calc(100% - 50px);
     }
 
-    .conversation__body {
-        padding: 25px;
-    }
 
     .conversation__message {
-        padding: 15px 25px;
+        padding: 15px 20px;
         border-radius: 20px
     }
 
@@ -221,35 +225,23 @@
 }
 
 @media (max-width: 768px) {
-    .conversation__body {
-        padding: 20px;
-    }
 
     .conversation__header {
         width: calc(100% - 40px);
         padding: 20px 0;
     }
 
-    .conversation__input {
-        padding: 25px 20px;
-    }
-
-    .conversation__input:empty::before {
-        padding: 25px 20px;
-    }
-
     .conversation__message {
         padding: 15px 20px;
+    }
+    .conversation__actions button .icon {
+        --iconSizePercent: .8;
     }
 }
 
 @media (max-width: 500px) {
     .conversation__body {
         padding: 20px;
-    }
-
-    .conversation__user {
-        gap: 15px;
     }
 
     .conversation__user .user-avatar img {
@@ -276,33 +268,14 @@
 
 @media (max-width: 450px) {
     .conversation__user .user-avatar img {
-        width: 45px;
-        height: 45px;
+        width: 35px;
+        height: 35px;
     }
-
     .conversation__info h3 {
-        font-size: 16px
+        font-size: 14px
     }
 
     .conversation .icon {
-        width: calc(25px * .7);
-        height: calc(25px * .7);
-        mask-size: calc(625px * .7) calc(100px * .7);
-    }
-
-    .conversation .icon.icon-times {
-        mask-position: calc(-350px * .7) calc(-75px * .7);
-    }
-
-    .conversation .icon.icon-more {
-        mask-position: calc(-175px * .7) calc(-75px * .7);
-    }
-
-    .conversation .icon.icon-image {
-        mask-position: calc(-350px * .7) 0;
-    }
-
-    .conversation .icon.icon-send {
-        mask-position: calc(-225px * .7) 0;
+        --iconSizePercent: .7;
     }
 }
