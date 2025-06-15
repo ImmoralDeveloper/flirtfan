@@ -39,10 +39,14 @@
                 <i class="icon icon-bookmarks"></i>
             </a>
         </li>
-        <li class="navbar__btn" data-btn="user">
-            <div class="navbar__user">
+        <li class="navbar__btn menu-container" data-btn="user">
+            <div class="navbar__user menu-btn">
                 <img src="{{ asset('img/avatar.png') }}" alt="Avatar">
-                <i class="icon icon-settings"></i>
+                <div id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </li>
     </ul>

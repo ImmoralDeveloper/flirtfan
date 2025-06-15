@@ -8,23 +8,27 @@
             <h2 id="page-title">{{ ucfirst($section) }}</h2>
             <x-public.search-form />
             <div class="header__buttons">
-                <button>
-                    <i class="icon icon-message"></i>
-                </button>
-                <button id="notification-btn">
-                    <i class="icon icon-notification"></i>
-                </button>
-            </div>
-            <div class="header__user">
-                <x-user-avatar :user="auth()->user()" />
-                <a href="{{ route('profile.index', auth()->user()) }}" class="header__username">
-                    <span>{{ auth()->user()->name }}</span>
+                <a href="{{ route('messages.index') }}">
+                    <button data-action="conversations"
+                        class="{{ request()->routeIs('messages.index') ? 'active' : '' }}">
+                        <i class="icon icon-message"></i>
+                        <span class="unread-conversations-count">
+                            {{ auth()->user()->unread_conversations->count() < 10 ? auth()->user()->unread_conversations->count() : '9+' }}
+                        </span>
+                    </button>
                 </a>
+                <button data-action="notifications">
+                    <i class="icon icon-notification"></i>
+                    <span>5</span>
+                </button>
             </div>
-            <div id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="header__user menu-container">
+                <div class="menu-btn">
+                    <x-user-avatar :user="auth()->user()" />
+                    <a href="{{ route('profile.index', auth()->user()) }}" class="header__username">
+                        <span>{{ auth()->user()->name }}</span>
+                    </a>
+                </div>
             </div>
         @endif
     </div>

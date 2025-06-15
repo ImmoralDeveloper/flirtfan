@@ -2,12 +2,25 @@
     <article class="post__article">
         <header class="post__header">
             <x-user-avatar :user="$post->user" />
-            <div class="post__user_info">
+            <div class="post__user-info">
                 <a href="{{ route('profile.index', $post->user->username) }}">{{ $post->user->name }}</a>
-                <a href="{{ route('profile.index', $post->user->username) }}">{{ "@{$post->user->username}" }}</a>
+                <div class="post__meta">
+                    <a href="#">
+                        <i class="icon icon-clock"></i>
+                        <time datetime="{{ $post->created_at }}">{{ $post->created_at->diffForHumans() }}</time>
+                    </a>
+                    <button type="button">
+                        @if($post->payment_required || $post->subscription_required)
+                            <i class="icon icon-private"></i>
+                            {{ $post->payment_required ? __('Payment required') : __('Only subscribers')}}
+                        @else
+                            <i class="icon icon-globe"></i>
+                            {{ __('Public') }}
+                        @endif
+                    </button>
+                </div>
             </div>
-            <div class="post__meta">
-                <a href="#{{ $post->id }}"><time>{{ $post->short_created_at }}</time></a>
+            <div class="post__actions">
                 <button type="button" class="post__more">
                     <i class="icon icon-more"></i>
                 </button>

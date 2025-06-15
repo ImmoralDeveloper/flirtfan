@@ -19,6 +19,8 @@ class Post extends Model
 
     protected $casts = [
         'media' => 'array', // Automatically cast social_links to an array
+        'payment_required' => 'boolean',
+        'subscription_required' => 'boolean'
     ];
 
     public function user()

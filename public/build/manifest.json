@@ -4,7 +4,7 @@
     "name": "index"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BxUdz-9k.css",
+    "file": "assets/app-DUkJHMwu.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -67,6 +67,12 @@
     "imports": [
       "_index-BtuGy7By.js"
     ]
+  },
+  "resources/js/components/menu.js": {
+    "file": "assets/menu-l0sNRNKZ.js",
+    "name": "menu",
+    "src": "resources/js/components/menu.js",
+    "isEntry": true
   },
   "resources/js/conversation.js": {
     "file": "assets/conversation-DfSh8rD3.js",

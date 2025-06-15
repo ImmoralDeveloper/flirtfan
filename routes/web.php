@@ -5,8 +5,15 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
+
+
+
+Route::controller(SearchController::class)->group(function () {
+    Route::get('search', 'index')->name('search.index');
+});
 
 Route::middleware(['guest'])->group(function () {
     Route::controller(LoginController::class)->group(function () {
@@ -25,12 +32,12 @@ Route::middleware(['guest'])->group(function () {
 
 });
 Route::middleware(['auth'])->group(function () {
-    
     Route::get('/', HomeController::class)->name('home');
+
 
     Route::controller(MessagesController::class)->group(function () {
 
-        Route::get('messages', 'show')->name('messages.show');
+        Route::get('messages', 'index')->name('messages.index');
 
     });
 
@@ -42,5 +49,3 @@ Route::middleware(['auth'])->group(function () {
     });
 
 });
-
-

@@ -232,4 +232,14 @@ class User extends Authenticatable
             });
     }
 
+    public function getUnreadConversationsAttribute()
+    {
+        return $this->conversations()
+            ->whereHas('messages', function ($query) {
+                $query->where('is_read', false)
+                    ->where('sender_id', '!=', $this->id);
+            })
+            ->get();
+    }
+
 }
