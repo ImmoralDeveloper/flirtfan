@@ -16,7 +16,9 @@ $sections = [
                 <div class="profile__avatar">
                     <x-user-avatar :user="$user" />
                     @if (auth()->check() && $user->id === auth()->id())
-                        <button></button>
+                        <button>
+                            <i class="icon icon-add-image"></i>
+                        </button>
                     @endif
                 </div>
                 <h1>{{ $user->name }}</h1>

@@ -29,6 +29,7 @@
                         <span>{{ auth()->user()->name }}</span>
                     </a>
                 </div>
+                <x-public.menu />
             </div>
         @endif
     </div>

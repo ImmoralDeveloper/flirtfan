@@ -13,7 +13,8 @@
           "scrollbar-width: thin",
           "mask-position",
           "mask-size",
-          "mask-repeat"
+          "mask-repeat",
+          "user-select"
         ]
       }
     ]

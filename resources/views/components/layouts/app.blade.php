@@ -30,59 +30,6 @@
         {{ $slot }}
     </main>
     @stack('scripts')
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            let menuHtml = `@include('components.public.menu')`; // Blade será procesado por Laravel
-
-            let currentDropdown = null;
-
-            function isVisible(el) {
-                return el.offsetParent !== null;
-            }
-
-            function getActiveDropdown() {
-                return Array.from(document.querySelectorAll('.menu-btn')).find(isVisible);
-            }
-
-            function removeMenu() {
-                const existingMenu = document.querySelector('.menu');
-                if (existingMenu) {
-                    existingMenu.remove();
-                }
-            }
-
-            function addMenu(dropdown) {
-                removeMenu(); // elimina cualquier menú previo
-                dropdown.insertAdjacentHTML('beforeend', menuHtml);
-                currentDropdown = dropdown;
-            }
-
-            // Evento para click en .menu-dropdown
-            document.querySelectorAll('.menu-container').forEach(menuContainer => {
-                menuContainer.addEventListener('click', () => {
-                    const alreadyOpen = menuContainer.querySelector('.menu');
-                    if (alreadyOpen) {
-                        removeMenu();
-                    } else {
-                        addMenu(menuContainer);
-                    }
-                });
-            });
-
-            // Detectar cambios en el tamaño de pantalla y limpiar el menú si cambia el dropdown activo
-            let lastActiveDropdown = getActiveDropdown();
-
-            window.addEventListener('resize', () => {
-                const newActiveDropdown = getActiveDropdown();
-
-                // Si cambió el dropdown activo, eliminar el menú
-                if (newActiveDropdown !== lastActiveDropdown) {
-                    removeMenu();
-                    lastActiveDropdown = newActiveDropdown;
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>

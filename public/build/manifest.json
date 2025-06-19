@@ -4,7 +4,7 @@
     "name": "index"
   },
   "resources/css/app.css": {
-    "file": "assets/app-DUkJHMwu.css",
+    "file": "assets/app-CNwb7Ike.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -34,7 +34,7 @@
     "isEntry": true
   },
   "resources/css/profile.css": {
-    "file": "assets/profile-DXgqXcCw.css",
+    "file": "assets/profile-CHy77pyP.css",
     "src": "resources/css/profile.css",
     "isEntry": true
   },
@@ -51,7 +51,7 @@
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-frUW4IfS.js",
+    "file": "assets/app-DuDXWjXf.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -78,6 +78,12 @@
     "file": "assets/conversation-DfSh8rD3.js",
     "name": "conversation",
     "src": "resources/js/conversation.js",
+    "isEntry": true
+  },
+  "resources/js/menu.js": {
+    "file": "assets/menu-CkBX979S.js",
+    "name": "menu",
+    "src": "resources/js/menu.js",
     "isEntry": true
   },
   "resources/js/messages.js": {

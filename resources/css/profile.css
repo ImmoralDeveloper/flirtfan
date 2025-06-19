@@ -79,19 +79,6 @@ body:has(.profile__container) .main {
     border: none;
 }
 
-.profile__avatar button:after,
-.profile__avatar button:before {
-    content: "";
-    position: absolute;
-    width: 18px;
-    height: 3px;
-    border-radius: 2px;
-    background: #fff;
-}
-
-.profile__avatar button:after {
-    transform: rotate(90deg);
-}
 
 .profile__avatar img {
     border-radius: 50%;
@@ -260,24 +247,31 @@ body:has(.profile__container) .main {
     
     .profile__meta{
         position: initial;
-        max-width: 100%;
+        background: none;
+        max-width: initial;
+        padding: 20px;
     }
-    .profile__meta>p {
-        font-size: 16px;
+    .profile__meta>p{
+        font-size: initial;
     }
     .profile__stats{
-        width: 100%;
-        margin-bottom: 20px;
-        justify-content: space-around;
+        width: auto;
+        background: none;
+        padding: 0;
+        justify-content: center;
+        gap: 20px;
     }
-    .profile__stats>div{
-        gap: 10px;
+    .profile__stats > div{
+        padding: 20px 0;
+        width: 100px;
+        background: var(--darkGray);
+        border-radius: 5px;
     }
     .profile__stats>div span{
-        font-size: 30px;
+        font-size: 26px;
     }
     .profile__stats>div p{
-        font-size: 18px;
+        font-size: 14px;
     }
     .profile__body{
         flex-direction: column;
@@ -324,25 +318,20 @@ body:has(.profile__container) .main {
         width: 140px;
         height: 140px;
     }
-    .profile__stats{
-        padding: 15px 20px;
-        justify-content: space-between;
+    
+}
+@media(max-width: 500px) {
+    .profile__meta>p{
+        font-size: 14px;
+    }
+    .profile__stats>div{
+        padding: 15px 0;    
+        width: 90px;
     }
     .profile__stats>div span{
         font-size: 22px;
     }
     .profile__stats>div p{
-        font-size: 15px;
+        font-size: 13px;
     }
-    .profile__stats>div p{
-        font-size: 15px;
-    }
-    .profile__meta{
-        margin-bottom: 30px;
-        padding: 20px;
-    }
-    .profile__meta>p{
-        font-size: 14px;
-    }
-    
 }
