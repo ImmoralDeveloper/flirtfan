@@ -1,0 +1,52 @@
+.messages__container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.messages__container>div {
+    width: 100%;
+    height: calc(100vh - 120px);
+    min-height: 550px;
+    overflow: hidden;
+}
+
+@media (max-width: 1150px) {
+    .messages__container {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .messages__container {
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: repeat(2, 100%);
+        gap: 0;
+        margin-top: 20px;
+        height: calc(100vh - 110px);
+    }
+
+    .messages__container>div{
+        max-width: 100%;
+        height: 100%;
+        transition: .2s;
+    }
+    .messages__container:has(.conversation.active) > div{
+        margin-left: -100%;
+    }
+}
+@media (max-width: 768px) {
+    .main:has(.messages__container){
+        padding: 0;
+    }
+    .messages__container {
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: repeat(2, 100%);
+        gap: 0;
+        margin-top: 0;
+        height: calc(100vh - 120px);
+    }
+}

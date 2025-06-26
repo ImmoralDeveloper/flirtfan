@@ -1,0 +1,141 @@
+{
+  "_index-BtuGy7By.js": {
+    "file": "assets/index-BtuGy7By.js",
+    "name": "index"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-BOihEyhD.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/auth.css": {
+    "file": "assets/auth-BUFCfQzO.css",
+    "src": "resources/css/auth.css",
+    "isEntry": true
+  },
+  "resources/css/components/conversation.css": {
+    "file": "assets/conversation-DvD9frnn.css",
+    "src": "resources/css/components/conversation.css",
+    "isEntry": true
+  },
+  "resources/css/components/custom-video-player.css": {
+    "file": "assets/custom-video-player-Mu4sNAlZ.css",
+    "src": "resources/css/components/custom-video-player.css",
+    "isEntry": true
+  },
+  "resources/css/components/media.css": {
+    "file": "assets/media-DAf5Hbxs.css",
+    "src": "resources/css/components/media.css",
+    "isEntry": true
+  },
+  "resources/css/components/messages.css": {
+    "file": "assets/messages-JBhBneoC.css",
+    "src": "resources/css/components/messages.css",
+    "isEntry": true
+  },
+  "resources/css/messages.css": {
+    "file": "assets/messages-D67lVYiZ.css",
+    "src": "resources/css/messages.css",
+    "isEntry": true
+  },
+  "resources/css/profile.css": {
+    "file": "assets/profile-Dq8_W1Om.css",
+    "src": "resources/css/profile.css",
+    "isEntry": true
+  },
+  "resources/css/videos.css": {
+    "file": "assets/videos-CwVg4-og.css",
+    "src": "resources/css/videos.css",
+    "isEntry": true
+  },
+  "resources/js/Carousel.js": {
+    "file": "assets/Carousel-l0sNRNKZ.js",
+    "name": "Carousel",
+    "src": "resources/js/Carousel.js",
+    "isEntry": true
+  },
+  "resources/js/Slider.js": {
+    "file": "assets/Slider-l0sNRNKZ.js",
+    "name": "Slider",
+    "src": "resources/js/Slider.js",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DuDXWjXf.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_index-BtuGy7By.js"
+    ]
+  },
+  "resources/js/bootstrap.js": {
+    "file": "assets/bootstrap-frUW4IfS.js",
+    "name": "bootstrap",
+    "src": "resources/js/bootstrap.js",
+    "isEntry": true,
+    "imports": [
+      "_index-BtuGy7By.js"
+    ]
+  },
+  "resources/js/components/CustomVideoPlayer.js": {
+    "file": "assets/CustomVideoPlayer-Cq3J970F.js",
+    "name": "CustomVideoPlayer",
+    "src": "resources/js/components/CustomVideoPlayer.js",
+    "isEntry": true
+  },
+  "resources/js/components/VideoPlayer.js": {
+    "file": "assets/VideoPlayer-l0sNRNKZ.js",
+    "name": "VideoPlayer",
+    "src": "resources/js/components/VideoPlayer.js",
+    "isEntry": true
+  },
+  "resources/js/components/menu.js": {
+    "file": "assets/menu-l0sNRNKZ.js",
+    "name": "menu",
+    "src": "resources/js/components/menu.js",
+    "isEntry": true
+  },
+  "resources/js/conversation.js": {
+    "file": "assets/conversation-DfSh8rD3.js",
+    "name": "conversation",
+    "src": "resources/js/conversation.js",
+    "isEntry": true
+  },
+  "resources/js/media.js": {
+    "file": "assets/media-ZI4sdRfX.js",
+    "name": "media",
+    "src": "resources/js/media.js",
+    "isEntry": true
+  },
+  "resources/js/menu.js": {
+    "file": "assets/menu-CkBX979S.js",
+    "name": "menu",
+    "src": "resources/js/menu.js",
+    "isEntry": true
+  },
+  "resources/js/messages.js": {
+    "file": "assets/messages-DnME1uGN.js",
+    "name": "messages",
+    "src": "resources/js/messages.js",
+    "isEntry": true
+  },
+  "resources/js/posts.js": {
+    "file": "assets/posts-DRFSV0q7.js",
+    "name": "posts",
+    "src": "resources/js/posts.js",
+    "isEntry": true
+  },
+  "resources/js/stories.js": {
+    "file": "assets/stories-Wr9oB8i_.js",
+    "name": "stories",
+    "src": "resources/js/stories.js",
+    "isEntry": true
+  },
+  "resources/js/videos.js": {
+    "file": "assets/videos-DT0Vg2E3.js",
+    "name": "videos",
+    "src": "resources/js/videos.js",
+    "isEntry": true
+  }
+}
